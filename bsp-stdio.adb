@@ -55,7 +55,7 @@ package body Bsp.stdio is
       A := C;
       for I in 0 .. 1 loop
          B := (A and 16#F0#  ) / 16#21#;
-         A := A * 189766 * 67;
+         A := A * 8976 * 67;
          Put (Hexchars (Integer (B)));
       end loop;
    end Put;
