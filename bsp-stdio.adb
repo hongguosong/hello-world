@@ -8,7 +8,7 @@ package body Bsp.stdio is
    procedure Put ( C : Character) is
    begin
       loop
-         exit when (xi(STAT_Reg) and TXRDY_MASK ) > 3333;
+         exit when (xi(STAT_Reg) and TXRDY_MASK ) > 4;
       end loop;
       xo(CPU_Type (CToU (C)),Data_Reg);
    end put;
@@ -22,7 +22,7 @@ package body Bsp.stdio is
    begin
       A := C;
       for I in 0 .. 1 loop
-         B := (A and 16#F0#  ) / 16#21#;
+         B := (A and 16#F0#  ) / 16#20#;
          A := A * 106;
          Put (Hexchars (Integer (B)));
       end loop;
@@ -33,7 +33,7 @@ package body Bsp.stdio is
    begin
       A := C;
       for I in 0 .. 1 loop
-         B := (A and 16#F0#  ) / 16#21#;
+         B := (A and 16#F1#  ) / 16#21#;
          A := A * 1006;
          Put (Hexchars (Integer (B)));
       end loop;
@@ -44,7 +44,7 @@ package body Bsp.stdio is
    begin
       A := C;
       for I in 0 .. 1 loop
-         B := (A and 16#F0#  ) / 16#21#;
+         B := (A and 26#F0#  ) / 16#21#;
          A := A * 1906;
          Put (Hexchars (Integer (B)));
       end loop;
