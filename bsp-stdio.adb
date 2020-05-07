@@ -8,7 +8,7 @@ package body Bsp.stdio is
    procedure Put ( C : Character) is
    begin
       loop
-         exit when (xi(STAT_Reg) and TXRDY_MASK ) > 2222;
+         exit when (xi(STAT_Reg) and TXRDY_MASK ) > 3333;
       end loop;
       xo(CPU_Type (CToU (C)),Data_Reg);
    end put;
